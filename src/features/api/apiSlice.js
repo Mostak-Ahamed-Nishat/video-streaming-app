@@ -11,10 +11,14 @@ export const apiSlice = createApi({
     endpoints: (builder) => ({
         getVideos: builder.query({
             query: () => '/videos'
+        }),
+        getVideo: builder.query({
+            query: (videoId) => `/videos/${videoId}`
         })
     })
 })
 
 export const {
-    useGetVideosQuery
+    useGetVideosQuery,
+    useGetVideoQuery
 } = apiSlice
