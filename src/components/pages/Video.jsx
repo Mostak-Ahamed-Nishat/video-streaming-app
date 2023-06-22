@@ -26,7 +26,7 @@ export default function Video() {
     content = <Error message="There was an error" />;
   }
   if (!isLoading && !isError && video?.id) {
-    console.log(video.title);
+  
     content = (
       <>
         <Player link={video.link} title={video.title} />
@@ -44,7 +44,7 @@ export default function Video() {
           </div>
           {/* If there is any related video or error  */}
           {video?.id ? (
-            <RelatedVideos />
+            <RelatedVideos id={video.id} title={video.title} />
           ) : isLoading ? (
             <>
               <RelatedVideoLoader />
